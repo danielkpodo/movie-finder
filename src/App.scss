@@ -1,0 +1,24 @@
+@import "./sass/partials/global";
+@import "./sass/partials/variables";
+
+@function fontSelector($font) {
+  @return map-get($fontFamily, $font);
+}
+
+@function colorSelector($color) {
+  @return map-get($colors, $color);
+}
+
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  background: colorSelector(bgcolor);
+  color: colorSelector(textcolor);
+  font-family: fontSelector(nunito);
+}
+
+h1,
+h2,
+h3 {
+  font-family: fontSelector(monsterrat);
+}
