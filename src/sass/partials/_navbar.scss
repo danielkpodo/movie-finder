@@ -1,0 +1,21 @@
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.625rem 1rem;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    opacity: 1;
+    li {
+      margin-right: 0.625rem;
+      a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

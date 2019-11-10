@@ -1,0 +1,44 @@
+.search-box {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 1rem;
+  margin: auto;
+
+  h2 {
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  input[type="text"] {
+    width: 37.5rem;
+    padding: 0.875rem 1rem;
+    outline: none;
+    border: 1px solid #000;
+    font-size: 1.03125rem;
+
+    &:focus {
+      border: 2px solid #eee;
+      transition: 400ms ease-in-out;
+    }
+  }
+
+  small {
+    margin: 0.5rem;
+    text-align: left;
+    opacity: 0.6;
+  }
+}
+
+::placeholder {
+  opacity: 0.5;
+}
