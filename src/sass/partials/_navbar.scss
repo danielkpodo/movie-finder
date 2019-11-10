@@ -1,3 +1,4 @@
+@import "./media";
 .navbar {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -5,11 +6,26 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 
   a {
     img {
       width: 15.625rem;
       height: 5rem;
+
+      @include small {
+        margin-right: 1.5rem;
+      }
+
+      @include mobile {
+        margin-right: 2.5rem;
+      }
     }
   }
 
@@ -19,8 +35,19 @@
     align-items: center;
     align-content: center;
     opacity: 1;
+
+    @include small {
+      margin-right: 1.2rem;
+    }
+
+    @include mobile {
+      margin-top: 1rem;
+    }
     li {
       padding-right: 3rem;
+      @include small {
+        padding: 0 0.625rem;
+      }
       a {
         color: #fff;
         font-weight: 500;

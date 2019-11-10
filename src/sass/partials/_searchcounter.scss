@@ -5,6 +5,9 @@
   margin-top: 2rem;
   h2 {
     font-weight: normal;
+    @include mobile {
+      font-size: 1.3rem;
+    }
   }
   small {
     opacity: 0.8;
