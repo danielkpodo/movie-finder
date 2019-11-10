@@ -4,6 +4,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.25rem;
+
+  @include medium {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
   }

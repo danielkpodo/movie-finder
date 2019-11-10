@@ -24,7 +24,7 @@ img {
   position: fixed;
   width: 100%;
   z-index: 1; }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .navbar {
       display: flex;
       flex-direction: column;
@@ -37,7 +37,7 @@ img {
     @media (max-width: 321px) {
       .navbar a img {
         margin-right: 1.5rem; } }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .navbar a img {
         margin-right: 2.5rem; } }
   .navbar ul {
@@ -49,7 +49,7 @@ img {
     @media (max-width: 321px) {
       .navbar ul {
         margin-right: 1.2rem; } }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .navbar ul {
         margin-top: 1rem; } }
     .navbar ul li {
@@ -79,7 +79,7 @@ img {
   align-items: center;
   padding: 15rem 1rem;
   margin: auto; }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .search-box {
       padding: 12rem 1rem; } }
   .search-box h2 {
@@ -87,7 +87,7 @@ img {
     font-size: 3rem;
     text-align: center;
     color: #03a562; }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .search-box h2 {
         font-size: 1.5rem; } }
   .search-box p {
@@ -95,7 +95,7 @@ img {
     text-align: center;
     margin-bottom: 1.25rem;
     color: crimson; }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .search-box p {
         font-size: 1rem; } }
   .search-box input[type="text"] {
@@ -104,7 +104,7 @@ img {
     outline: none;
     border: 1px solid #000;
     font-size: 1.03125rem; }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .search-box input[type="text"] {
         max-width: 90%; } }
     .search-box input[type="text"]:focus {
@@ -175,10 +175,13 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.25rem; }
+  @media (max-width: 1100px) {
+    .mv-collections {
+      grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 768px) {
     .mv-collections {
       grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .mv-collections {
       grid-template-columns: 1fr; } }
 
@@ -189,7 +192,7 @@ img {
   margin-top: 2rem; }
   .search-counter h2 {
     font-weight: normal; }
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .search-counter h2 {
         font-size: 1.3rem; } }
   .search-counter small {
