@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0.625rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 
   a {
     img {
@@ -17,7 +20,7 @@
     align-content: center;
     opacity: 1;
     li {
-      margin-right: 0.625rem;
+      padding-right: 3rem;
       a {
         color: #fff;
         font-weight: 500;
@@ -32,6 +35,9 @@
   }
 }
 
-.active a {
-  color: crimson;
+.nav-colored {
+  background-color: #020d18;
+}
+.nav-transparent {
+  background-color: transparent;
 }

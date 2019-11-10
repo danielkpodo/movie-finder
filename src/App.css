@@ -20,7 +20,10 @@ img {
 .navbar {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0.625rem 1rem; }
+  padding: 0.625rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
   .navbar a img {
     width: 15.625rem;
     height: 5rem; }
@@ -31,7 +34,7 @@ img {
     align-content: center;
     opacity: 1; }
     .navbar ul li {
-      margin-right: 0.625rem; }
+      padding-right: 3rem; }
       .navbar ul li a {
         color: #fff;
         font-weight: 500;
@@ -40,8 +43,11 @@ img {
           color: #03a562;
           transition: 1s; }
 
-.active a {
-  color: crimson; }
+.nav-colored {
+  background-color: #020d18; }
+
+.nav-transparent {
+  background-color: transparent; }
 
 .search-box {
   max-width: 900px;

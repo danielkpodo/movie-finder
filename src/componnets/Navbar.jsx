@@ -9,7 +9,7 @@ function Navbar() {
     <div className="header-wrap">
       <Particles />
       <header className="overlay">
-        <nav className="navbar">
+        <nav className="navbar" id="myNav">
           <a href="#!" title="Movie Finder powered by MovieDB">
             <img src={logo} alt="MovieDB official logo" />
           </a>
@@ -20,7 +20,7 @@ function Navbar() {
             <li>
               <a href="#!">Seasons</a>
             </li>
-            <li className="active">
+            <li>
               <a href="#!">Everything</a>
             </li>
           </ul>
