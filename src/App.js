@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./componnets/Navbar";
-import MovieCard from "./componnets/MovieCard";
+import Movies from "./componnets/Movies";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div id="wrapper">
         <Navbar />
-        <MovieCard />
+        <Movies />
       </div>
     );
   }

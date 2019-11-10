@@ -3,6 +3,8 @@
 @import "./sass/partials/navbar";
 @import "./sass/partials/searchbox";
 @import "./sass/partials/moviecard";
+@import "./sass/partials/movies";
+@import "./sass/partials/searchcounter";
 
 @function fontSelector($font) {
   @return map-get($fontFamily, $font);

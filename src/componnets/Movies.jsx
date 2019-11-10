@@ -1,10 +1,18 @@
 import React from "react";
+import MovieCard from "./MovieCard";
+import SearchCounter from "./SearchCounter";
 
 function Movies() {
   return (
-    <div className="mv-collections">
-      <h1>Hello Dan</h1>
-    </div>
+    <>
+      <SearchCounter />
+      <div className="mv-collections">
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+      </div>
+    </>
   );
 }
 
