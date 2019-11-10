@@ -21,6 +21,9 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0.625rem 1rem; }
+  .navbar a img {
+    width: 15.625rem;
+    height: 5rem; }
   .navbar ul {
     display: flex;
     justify-content: flex-end;
@@ -33,6 +36,12 @@ img {
         color: #fff;
         font-weight: 500;
         font-size: 1.125rem; }
+        .navbar ul li a:hover {
+          color: #03a562;
+          transition: 1s; }
+
+.active a {
+  color: crimson; }
 
 .search-box {
   max-width: 900px;
@@ -45,11 +54,13 @@ img {
   .search-box h2 {
     font-weight: 900;
     font-size: 3rem;
-    text-align: center; }
+    text-align: center;
+    color: #03a562; }
   .search-box p {
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 1.25rem;
+    color: crimson; }
   .search-box input[type="text"] {
     width: 37.5rem;
     padding: 0.875rem 1rem;

@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBox from "./SearchBox";
 import Particles from "react-particles-js";
+import logo from "../images/logo.png";
 import "./header.css";
 
 function Navbar() {
@@ -9,7 +10,9 @@ function Navbar() {
       <Particles />
       <header className="overlay">
         <nav className="navbar">
-          <h1>Movie Finder</h1>
+          <a href="#!" title="Movie Finder powered by MovieDB">
+            <img src={logo} alt="MovieDB official logo" />
+          </a>
           <ul>
             <li>
               <a href="#!">Movies</a>
@@ -17,7 +20,7 @@ function Navbar() {
             <li>
               <a href="#!">Seasons</a>
             </li>
-            <li>
+            <li className="active">
               <a href="#!">Everything</a>
             </li>
           </ul>

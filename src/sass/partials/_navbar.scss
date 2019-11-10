@@ -3,6 +3,13 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 0.625rem 1rem;
 
+  a {
+    img {
+      width: 15.625rem;
+      height: 5rem;
+    }
+  }
+
   ul {
     display: flex;
     justify-content: flex-end;
@@ -15,7 +22,16 @@
         color: #fff;
         font-weight: 500;
         font-size: 1.125rem;
+
+        &:hover {
+          color: #03a562;
+          transition: 1s;
+        }
       }
     }
   }
+}
+
+.active a {
+  color: crimson;
 }
