@@ -3,7 +3,7 @@ import mission from "../images/mission-impossible-5d6957f73ca05.jpg";
 
 function MovieCard() {
   return (
-    <div className="mv-card">
+    <div className="mv-card" data-aos="zoom-in">
       <div className="mv-columns">
         <div className="mv-img">
           <img src={mission} alt="" />
