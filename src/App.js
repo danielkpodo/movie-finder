@@ -21,7 +21,7 @@ class App extends Component {
     this.setState({ isLoading: true });
     const url = `https://api.themoviedb.org/3/search/multi?api_key=${
       this.state.api_key
-    }&query=${this.state.keywords === "" ? "enemy" : this.state.keywords}`;
+    }&query=${this.state.keywords === "" ? "war" : this.state.keywords}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {

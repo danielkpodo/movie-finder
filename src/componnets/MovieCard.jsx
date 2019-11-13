@@ -1,37 +1,45 @@
 import React from "react";
-import mission from "../images/mission-impossible-5d6957f73ca05.jpg";
+
 function MovieCard(props) {
-  const { poster_path, original_title } = props.movie;
+  const { poster_path, original_title, release_date, media_type } = props.movie;
   return (
     <div className="mv-card">
       <div className="mv-columns">
         <div className="mv-img">
-          <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="" />
+          {poster_path === null ? (
+            <img src={"https://dummyimage.com/300&text=No_cover_art"} alt="" />
+          ) : (
+            <img
+              src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+              alt=""
+            />
+          )}
         </div>
         <div className="mv-info">
-          <h3>{original_title}</h3>
-          <small>PG-13 / 2hr 49mins / Adventure, drama, fiction</small>
+          {original_title !== null ? (
+            <h3>{original_title}</h3>
+          ) : (
+            <h3>No title</h3>
+          )}
+          <small className="release_date">
+            <strong>Release Date: </strong>
+            <em>
+              {release_date === null ? (
+                "No date found"
+              ) : (
+                <strong className="date">{release_date}</strong>
+              )}
+            </em>
+          </small>
           <div className="summary">
-            <small>ACTIVITY</small>
-            <span>
-              <i className="fa fa-eye" aria-hidden="true"></i> 340{" "}
-              <i className="fa fa-smile-o" aria-hidden="true"></i> 84
-            </span>
-          </div>
-          <div className="text-content">
-            <small>Jane Cartel Jennifer Lopex</small>
+            <small>Media Type</small>
+            <span>{media_type}</span>
           </div>
           <div className="mv-footer">
             <div className="read-more">
-              <button>
-                <i className="fa fa-play" aria-hidden="true"></i> Watch Trailer
-              </button>
-            </div>
-            <div className="social">
-              <i className="fa fa-download" aria-hidden="true"></i> 904{" "}
-              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> 488
-              &nbsp;
-              <i className="fa fa-share-square-o" aria-hidden="true"></i>
+              <a href="#!">
+                <i className="fa fa-eye" aria-hidden="true"></i> View Details
+              </a>
             </div>
           </div>
         </div>
