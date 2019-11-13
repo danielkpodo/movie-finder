@@ -5,7 +5,7 @@ import SearchCounter from "./SearchCounter";
 function Movies(props) {
   return (
     <>
-      <SearchCounter />
+      <SearchCounter searchCount={props.totalCount} />
       <div className="mv-collections">
         {props.movieList.map(movie => (
           <MovieCard key={movie.id} movie={movie} />

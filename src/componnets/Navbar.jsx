@@ -13,17 +13,28 @@ function Navbar(props) {
           </a>
           <ul>
             <li>
-              <a href="#!">Movies</a>
+              <a href="#!" title="Search for movies">
+                Movies
+              </a>
             </li>
             <li>
-              <a href="#!">Seasons</a>
+              <a href="#!" title="search for tv shows">
+                Seasons
+              </a>
             </li>
             <li>
-              <a href="#!">Everything</a>
+              <a href="#!" title="Search with any keyword">
+                Everything
+              </a>
             </li>
           </ul>
         </nav>
-        <SearchBox searchTerm={props.onInput} />
+        <SearchBox
+          searchTerm={props.onInput}
+          count={props.count}
+          search={props.search}
+          loaderIndicator={props.loader}
+        />
       </header>
     </div>
   );

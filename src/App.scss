@@ -6,6 +6,7 @@
 @import "./sass/partials/movies";
 @import "./sass/partials/searchcounter";
 @import "./sass/partials/particles";
+@import "./sass/partials/spinner";
 
 @function fontSelector($font) {
   @return map-get($fontFamily, $font);

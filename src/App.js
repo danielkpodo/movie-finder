@@ -10,7 +10,8 @@ class App extends Component {
       api_key: "84990e0335c32812300e28deea4e6c60",
       keywords: "",
       isLoading: true,
-      movies: []
+      movies: [],
+      totalResults: 0
     };
   }
   componentDidMount() {
@@ -27,9 +28,11 @@ class App extends Component {
       .then(data => {
         this.setState({
           isLoading: false,
-          movies: data.results
+          movies: data.results,
+          totalResults: data.total_results
         });
         console.log("Raw Data", this.state.movies);
+        console.log("Total Search Result", this.state.totalResults);
       })
       .catch(err => console.log("Error Retrieveing results, try again", err));
   };
@@ -42,11 +45,34 @@ class App extends Component {
       () => this.handleFetchRequest()
     );
   };
+
+  handleLoaderDisplay = () => {
+    if (this.state.isLoading === true)
+      return (
+        <div className="spinner">
+          <div className="rect1"></div>
+          <div className="rect2"></div>
+          <div className="rect3"></div>
+          <div className="rect4"></div>
+          <div className="rect5"></div>
+        </div>
+      );
+    return null;
+  };
+
   render() {
     return (
       <div id="wrapper">
-        <Navbar onInput={this.handleSearchPhrase} />
-        <Movies movieList={this.state.movies} />
+        <Navbar
+          onInput={this.handleSearchPhrase}
+          count={this.state.totalResults}
+          search={this.state.keywords}
+          loader={this.handleLoaderDisplay()}
+        />
+        <Movies
+          movieList={this.state.movies}
+          totalCount={this.state.totalResults}
+        />
       </div>
     );
   }

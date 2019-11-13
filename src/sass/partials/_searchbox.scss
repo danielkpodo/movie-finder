@@ -4,11 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15rem 1rem;
+  padding: 13rem 1rem;
   margin: auto;
 
   @include mobile {
-    padding: 12rem 1rem;
+    padding: 11rem 1rem;
   }
 
   h2 {
@@ -17,7 +17,15 @@
     text-align: center;
     color: #03a562;
     @include mobile {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+
+  h3 {
+    @include mobile {
+      font-size: 0.875rem;
+      text-align: center;
     }
   }
 
@@ -57,4 +65,12 @@
 
 ::placeholder {
   opacity: 0.5;
+}
+
+.count {
+  color: crimson;
+}
+
+.phrase {
+  color: #03a562;
 }
