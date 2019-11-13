@@ -9,21 +9,21 @@ function Navbar(props) {
       <header className="overlay">
         <nav className="navbar" id="myNav">
           <a href="#!" title="Movie Finder powered by MovieDB">
-            <img src={logo} alt="MovieDB official logo" data-aos="flip-right" />
+            <img src={logo} alt="MovieDB official logo" />
           </a>
           <ul>
-            <li data-aos="fade-down">
+            <li>
               <a href="#!">Movies</a>
             </li>
-            <li data-aos="fade-down">
+            <li>
               <a href="#!">Seasons</a>
             </li>
-            <li data-aos="fade-down">
+            <li>
               <a href="#!">Everything</a>
             </li>
           </ul>
         </nav>
-        <SearchBox onTyping={props.onHandleInput} />
+        <SearchBox searchTerm={props.onInput} />
       </header>
     </div>
   );

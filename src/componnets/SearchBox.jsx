@@ -9,11 +9,11 @@ function SearchBox(props) {
         type="text"
         placeholder="What are you looking for ? start typing..."
         autoFocus
-        onChange={props.onTyping}
+        onChange={props.searchTerm}
       />
       <small>
         Trending movies: Angel has Fallen, Black &amp; Blue, Rambo Last Blood,
-        Wu Assasins
+        Mission Impossible
       </small>
     </div>
   );

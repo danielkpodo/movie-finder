@@ -11,5 +11,3 @@ window.addEventListener("scroll", function(e) {
     nav.classList.remove("nav-colored");
   }
 });
-
-AOS.init();

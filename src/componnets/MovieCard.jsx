@@ -1,15 +1,15 @@
 import React from "react";
 import mission from "../images/mission-impossible-5d6957f73ca05.jpg";
-
-function MovieCard() {
+function MovieCard(props) {
+  const { poster_path, original_title } = props.movie;
   return (
-    <div className="mv-card" data-aos="zoom-in">
+    <div className="mv-card">
       <div className="mv-columns">
         <div className="mv-img">
-          <img src={mission} alt="" />
+          <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="" />
         </div>
         <div className="mv-info">
-          <h3>Mission Impossible</h3>
+          <h3>{original_title}</h3>
           <small>PG-13 / 2hr 49mins / Adventure, drama, fiction</small>
           <div className="summary">
             <small>ACTIVITY</small>

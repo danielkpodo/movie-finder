@@ -4,44 +4,49 @@ import Movies from "./componnets/Movies";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      movies: [],
-      API_KEY: "f93bce160c2eec4d9e52813434db366c",
-      searchTerm: "*",
-      isLoading: true
+      api_key: "84990e0335c32812300e28deea4e6c60",
+      keywords: "",
+      isLoading: true,
+      movies: []
     };
   }
-
   componentDidMount() {
-    this.handleMoviesRequest();
+    this.handleFetchRequest();
   }
 
-  handleMoviesRequest = () => {
+  handleFetchRequest = () => {
     this.setState({ isLoading: true });
-    const requestURL = `https://api.themoviedb.org/3/search/multi?&query=${this.state.searchTerm}&api_key=${this.state.API_KEY}&language=en-US`;
-
-    fetch(requestURL)
+    const url = `https://api.themoviedb.org/3/search/multi?api_key=${
+      this.state.api_key
+    }&query=${this.state.keywords === "" ? "enemy" : this.state.keywords}`;
+    fetch(url)
       .then(res => res.json())
       .then(data => {
-        this.setState({ movies: data.results, isLoading: false });
-        console.log("Retrieved Movies", this.state.movies);
-        console.log("Raw Data", data);
-      });
+        this.setState({
+          isLoading: false,
+          movies: data.results
+        });
+        console.log("Raw Data", this.state.movies);
+      })
+      .catch(err => console.log("Error Retrieveing results, try again", err));
   };
 
-  handleSearchInput = e => {
-    this.setState({ searchTerm: e.target.value }, () =>
-      this.handleMoviesRequest()
+  handleSearchPhrase = e => {
+    this.setState(
+      {
+        keywords: e.target.value
+      },
+      () => this.handleFetchRequest()
     );
   };
-
   render() {
     return (
       <div id="wrapper">
-        <Navbar onHandleInput={this.handleSearchInput} />
-        <Movies />
+        <Navbar onInput={this.handleSearchPhrase} />
+        <Movies movieList={this.state.movies} />
       </div>
     );
   }
