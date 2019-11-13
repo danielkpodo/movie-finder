@@ -8,40 +8,39 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      apiKey: "f93bce160c2eec4d9e52813434db366c",
-      searchTerm: "",
+      API_KEY: "f93bce160c2eec4d9e52813434db366c",
+      searchTerm: "*",
       isLoading: true
     };
   }
 
   componentDidMount() {
-    this.handleFetchRequest();
+    this.handleMoviesRequest();
   }
-  handleFetchRequest = () => {
-    this.setState({ isLoading: true });
-    const url = `https://api.themoviedb.org/3/search/multi?api_key=${this.state.apiKey}&query=${this.state.searchTerm}&language=en-US`;
 
-    fetch(url)
+  handleMoviesRequest = () => {
+    this.setState({ isLoading: true });
+    const requestURL = `https://api.themoviedb.org/3/search/multi?&query=${this.state.searchTerm}&api_key=${this.state.API_KEY}&language=en-US`;
+
+    fetch(requestURL)
       .then(res => res.json())
       .then(data => {
-        this.setState({
-          movies: data.results,
-          isLoading: false
-        });
-        console.log("Movies Returned", this.state.movies);
+        this.setState({ movies: data.results, isLoading: false });
+        console.log("Retrieved Movies", this.state.movies);
+        console.log("Raw Data", data);
       });
   };
 
-  handleInputRequest = e => {
+  handleSearchInput = e => {
     this.setState({ searchTerm: e.target.value }, () =>
-      this.handleFetchRequest()
+      this.handleMoviesRequest()
     );
   };
 
   render() {
     return (
       <div id="wrapper">
-        <Navbar onHandleInput={this.handleInputRequest} />
+        <Navbar onHandleInput={this.handleSearchInput} />
         <Movies />
       </div>
     );
