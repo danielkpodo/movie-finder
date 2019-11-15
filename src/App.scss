@@ -9,6 +9,7 @@
 @import "./sass/partials/spinner";
 @import "./sass/partials/pagination";
 @import "./sass/partials/noresult";
+@import "./sass/partials/movieinfo";
 
 @function fontSelector($font) {
   @return map-get($fontFamily, $font);

@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoResultFound() {
+function NoResultFound(props) {
   return (
     <>
       <div className="no-result">
@@ -9,7 +9,7 @@ function NoResultFound() {
         </div>
         <div className="text">
           <h2>
-            Sorry, we coudn't find any results matching "Zlatan Ibrahimovic"
+            Sorry, we coudn't find any results matching "{props.noResult}"
           </h2>
         </div>
       </div>

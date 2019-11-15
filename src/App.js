@@ -108,7 +108,7 @@ class App extends Component {
             ) : null}
           </>
         ) : (
-          <NoResultFound />
+          <NoResultFound noResult={this.state.keywords} />
         )}
       </div>
     );
