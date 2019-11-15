@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/movie-finder/static/css/main.2a4b136c.chunk.css",
+    "main.js": "/movie-finder/static/js/main.88765eaa.chunk.js",
+    "main.js.map": "/movie-finder/static/js/main.88765eaa.chunk.js.map",
+    "runtime-main.js": "/movie-finder/static/js/runtime-main.0b5d3076.js",
+    "runtime-main.js.map": "/movie-finder/static/js/runtime-main.0b5d3076.js.map",
+    "static/css/2.f0cb3191.chunk.css": "/movie-finder/static/css/2.f0cb3191.chunk.css",
+    "static/js/2.92a64030.chunk.js": "/movie-finder/static/js/2.92a64030.chunk.js",
+    "static/js/2.92a64030.chunk.js.map": "/movie-finder/static/js/2.92a64030.chunk.js.map",
+    "index.html": "/movie-finder/index.html",
+    "precache-manifest.62eaa37b7276de9852290bb85845cb22.js": "/movie-finder/precache-manifest.62eaa37b7276de9852290bb85845cb22.js",
+    "service-worker.js": "/movie-finder/service-worker.js",
+    "static/css/2.f0cb3191.chunk.css.map": "/movie-finder/static/css/2.f0cb3191.chunk.css.map",
+    "static/css/main.2a4b136c.chunk.css.map": "/movie-finder/static/css/main.2a4b136c.chunk.css.map",
+    "static/media/font-awesome.css": "/movie-finder/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/header.css": "/movie-finder/static/media/header1.76a0194b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b5d3076.js",
+    "static/css/2.f0cb3191.chunk.css",
+    "static/js/2.92a64030.chunk.js",
+    "static/css/main.2a4b136c.chunk.css",
+    "static/js/main.88765eaa.chunk.js"
+  ]
+}
