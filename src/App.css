@@ -265,23 +265,24 @@ img {
     -webkit-transform: scaleY(1); } }
 .pagination {
   display: block;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
+  max-width: 1000px;
   margin: 0.625rem 3rem;
-  padding: 0.625rem 1rem; }
-  .pagination li a {
-    color: #fff;
+  padding: 0.625rem 2rem;
+  margin: auto;
+  text-align: center; }
+  .pagination li .active {
+    background-color: #03a562;
+    color: #fff; }
+  .pagination a {
+    color: crimson;
     font-weight: bold;
     float: left;
     padding: 8px 16px;
     text-decoration: none; }
-    .pagination li a:hover {
-      color: crimson;
+    .pagination a:hover:not(.active) {
+      background-color: crimson;
+      color: #fff;
       cursor: pointer; }
-
-li.active {
-  color: #03a562; }
 
 body {
   line-height: 1.5;

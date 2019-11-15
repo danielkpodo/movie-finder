@@ -24,7 +24,7 @@ class App extends Component {
     this.setState({ isLoading: true });
     const url = `https://api.themoviedb.org/3/search/multi?api_key=${
       this.state.api_key
-    }&query=${this.state.keywords === "" ? "war" : this.state.keywords}`;
+    }&query=${this.state.keywords === "" ? "soldiers" : this.state.keywords}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -66,7 +66,7 @@ class App extends Component {
     const pageURL = `https://api.themoviedb.org/3/search/multi?api_key=${
       this.state.api_key
     }&query=${
-      this.state.keywords === "" ? "war" : this.state.keywords
+      this.state.keywords === "" ? "soldiers" : this.state.keywords
     }&language=en-&page=${pageNumber}`;
 
     fetch(pageURL)
@@ -81,7 +81,7 @@ class App extends Component {
   };
 
   render() {
-    const numberOfPages = Math.floor(this.state.totalResults / 500);
+    const numberOfPages = Math.floor(this.state.totalResults / 20);
     console.log("number of Pages", numberOfPages);
     return (
       <div id="wrapper">

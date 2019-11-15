@@ -19,7 +19,7 @@ function SearchBox(props) {
       <h3>
         Currently displaying <span className="count">{props.count}</span> result
         {props.count > 1 ? "s" : ""} for{" "}
-        <span className="phrase">{search !== "" ? search : "War"}</span>
+        <span className="phrase">{search !== "" ? search : "Soldiers"}</span>
       </h3>
       <>{loaderIndicator}</>
     </div>

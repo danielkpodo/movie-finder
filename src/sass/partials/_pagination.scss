@@ -1,24 +1,24 @@
 .pagination {
   display: block;
-  max-width: 900px;
+  max-width: 1000px;
+  margin: 0.625rem 3rem;
+  padding: 0.625rem 2rem;
   margin: auto;
   text-align: center;
-  margin: 0.625rem 3rem;
-  padding: 0.625rem 1rem;
-
-  li a {
+  li .active {
+    background-color: #03a562;
     color: #fff;
+  }
+  a {
+    color: crimson;
     font-weight: bold;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-    &:hover {
-      color: crimson;
+    &:hover:not(.active) {
+      background-color: crimson;
+      color: #fff;
       cursor: pointer;
     }
   }
-}
-
-li.active {
-  color: #03a562;
 }
