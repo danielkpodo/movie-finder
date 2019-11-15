@@ -284,6 +284,49 @@ img {
       color: #fff;
       cursor: pointer; }
 
+.no-result {
+  max-width: 900px;
+  margin: 3rem auto;
+  color: crimson;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red; }
+  @media (max-width: 1200px) {
+    .no-result {
+      border: 0; } }
+  @media (max-width: 321px) {
+    .no-result {
+      flex-direction: column; } }
+  .no-result i {
+    color: red; }
+  .no-result h2 {
+    padding: 0.625rem;
+    text-align: center;
+    font-weight: bolder; }
+    @media (max-width: 425px) {
+      .no-result h2 {
+        font-size: 1.2rem; } }
+
+.search-tips {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem 5rem;
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
+  .search-tips h3 {
+    color: crimson;
+    padding: 0.625rem;
+    font-size: 1.5rem; }
+  .search-tips ul li {
+    list-style: square;
+    line-height: 2; }
+
 body {
   line-height: 1.5;
   font-size: 100%;

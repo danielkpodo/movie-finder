@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Pagination from "./components/Pagination";
+import NoResultFound from "./components/NoSearchResult";
 import "./App.css";
 
 class App extends Component {
@@ -91,17 +92,24 @@ class App extends Component {
           search={this.state.keywords}
           loader={this.handleLoaderDisplay()}
         />
-        <Movies
-          movieList={this.state.movies}
-          totalCount={this.state.totalResults}
-        />
-        {this.state.totalResults > 20 ? (
-          <Pagination
-            pages={numberOfPages}
-            nextPage={this.handleNextPage}
-            currentPage={this.state.currentPage}
-          />
-        ) : null}
+        {this.state.movies.length !== 0 ? (
+          <>
+            {" "}
+            <Movies
+              movieList={this.state.movies}
+              totalCount={this.state.totalResults}
+            />
+            {this.state.totalResults > 20 ? (
+              <Pagination
+                pages={numberOfPages}
+                nextPage={this.handleNextPage}
+                currentPage={this.state.currentPage}
+              />
+            ) : null}
+          </>
+        ) : (
+          <NoResultFound />
+        )}
       </div>
     );
   }
