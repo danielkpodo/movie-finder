@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBox from "./SearchBox";
 import logo from "../images/logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./header.css";
 
 function Navbar(props) {
@@ -9,9 +9,9 @@ function Navbar(props) {
     <div className="header-wrap">
       <header className="overlay">
         <nav className="navbar" id="myNav">
-          <NavLink to="/" title="Movie Finder powered by MovieDB">
+          <Link to="/" title="Movie Finder powered by MovieDB">
             <img src={logo} alt="MovieDB official logo" />
-          </NavLink>
+          </Link>
           <ul>
             <li>
               <NavLink to="/movies" title="Search for movies">

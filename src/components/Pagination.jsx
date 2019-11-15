@@ -7,13 +7,13 @@ const Pagination = props => {
     let active = currentPage === i ? "active" : "";
     pageLinks.push(
       <li key={i} onClick={() => nextPage(i)}>
-        <a href="#" className={`${active}`}>
+        <a href="#!" className={`${active}`}>
           {i}
         </a>
       </li>
     );
   }
-  console.log("PageLinks", pageLinks);
+
   return (
     <div className="pagination">
       {currentPage > 1 ? (

@@ -10,7 +10,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      api_key: "84990e0335c32812300e28deea4e6c60",
       keywords: "",
       isLoading: true,
       movies: [],
@@ -25,7 +24,7 @@ class App extends Component {
   handleFetchRequest = () => {
     this.setState({ isLoading: true });
     const url = `https://api.themoviedb.org/3/search/multi?api_key=${
-      this.state.api_key
+      process.env.REACT_APP_API_KEY
     }&query=${this.state.keywords === "" ? "soldiers" : this.state.keywords}`;
     fetch(url)
       .then(res => res.json())
@@ -35,8 +34,6 @@ class App extends Component {
           movies: data.results,
           totalResults: data.total_results
         });
-        console.log("Raw Data", this.state.movies);
-        console.log("Total Search Result", this.state.totalResults);
       })
       .catch(err => console.log("Error Retrieveing results, try again", err));
   };
@@ -66,7 +63,7 @@ class App extends Component {
 
   handleNextPage = pageNumber => {
     const pageURL = `https://api.themoviedb.org/3/search/multi?api_key=${
-      this.state.api_key
+      process.env.REACT_APP_API_KEY
     }&query=${
       this.state.keywords === "" ? "soldiers" : this.state.keywords
     }&language=en-&page=${pageNumber}`;
@@ -84,7 +81,6 @@ class App extends Component {
 
   render() {
     const numberOfPages = Math.floor(this.state.totalResults / 20);
-    console.log("number of Pages", numberOfPages);
     return (
       <div id="wrapper">
         <Navbar
