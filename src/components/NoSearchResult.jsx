@@ -5,7 +5,7 @@ function NoResultFound(props) {
     <>
       <div className="no-result">
         <div className="result-icon">
-          <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+          <i className="fa fa-info-circle fa-3x" aria-hidden="true"></i>
         </div>
         <div className="text">
           <h2>

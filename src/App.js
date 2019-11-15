@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Pagination from "./components/Pagination";
 import NoResultFound from "./components/NoSearchResult";
+import { Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -95,15 +96,27 @@ class App extends Component {
         {this.state.movies.length !== 0 ? (
           <>
             {" "}
-            <Movies
-              movieList={this.state.movies}
-              totalCount={this.state.totalResults}
+            <Route
+              exact
+              path="/:any?"
+              component={() => (
+                <Movies
+                  movieList={this.state.movies}
+                  totalCount={this.state.totalResults}
+                />
+              )}
             />
             {this.state.totalResults > 20 ? (
-              <Pagination
-                pages={numberOfPages}
-                nextPage={this.handleNextPage}
-                currentPage={this.state.currentPage}
+              <Route
+                exact
+                path="/:any?"
+                component={() => (
+                  <Pagination
+                    pages={numberOfPages}
+                    nextPage={this.handleNextPage}
+                    currentPage={this.state.currentPage}
+                  />
+                )}
               />
             ) : null}
           </>

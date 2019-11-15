@@ -1,7 +1,13 @@
 import React from "react";
 
 function MovieCard(props) {
-  const { poster_path, original_title, release_date, media_type } = props.movie;
+  const {
+    poster_path,
+    original_title,
+    release_date,
+    media_type,
+    vote_count
+  } = props.movie;
   return (
     <div className="mv-card">
       <div className="mv-columns">
@@ -37,9 +43,9 @@ function MovieCard(props) {
           </div>
           <div className="mv-footer">
             <div className="read-more">
-              <a href="#!">
-                <i className="fa fa-eye" aria-hidden="true"></i> View Details
-              </a>
+              <i className="fa fa-globe" aria-hidden="true"></i>{" "}
+              <span>{vote_count}</span>{" "}
+              <i className="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
           </div>
         </div>

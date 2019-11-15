@@ -67,15 +67,11 @@ $shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   @include padding;
 
   .read-more {
-    a {
+    span {
       color: crimson;
-
-      &:hover {
-        text-decoration: underline;
-        color: #03a562;
-        transition: 400ms ease-out;
-      }
     }
+    color: gold;
+    opacity: 0.5;
   }
 }
 

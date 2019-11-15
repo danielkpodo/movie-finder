@@ -173,12 +173,11 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0.3125rem 0.625rem; }
-  .mv-footer .read-more a {
-    color: crimson; }
-    .mv-footer .read-more a:hover {
-      text-decoration: underline;
-      color: #03a562;
-      transition: 400ms ease-out; }
+  .mv-footer .read-more {
+    color: gold;
+    opacity: 0.5; }
+    .mv-footer .read-more span {
+      color: crimson; }
 
 .release_date {
   display: flex;
