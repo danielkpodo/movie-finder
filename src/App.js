@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Navbar from "./componnets/Navbar";
-import Movies from "./componnets/Movies";
+import Navbar from "./components/Navbar";
+import Movies from "./components/Movies";
+import Pagination from "./components/Pagination";
 import "./App.css";
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
       keywords: "",
       isLoading: true,
       movies: [],
-      totalResults: 0
+      totalResults: 0,
+      currentPage: 1
     };
   }
   componentDidMount() {
@@ -60,7 +62,27 @@ class App extends Component {
     return null;
   };
 
+  handleNextPage = pageNumber => {
+    const pageURL = `https://api.themoviedb.org/3/search/multi?api_key=${
+      this.state.api_key
+    }&query=${
+      this.state.keywords === "" ? "war" : this.state.keywords
+    }&language=en-&page=${pageNumber}`;
+
+    fetch(pageURL)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          currentPage: pageNumber,
+          movies: data.results
+        });
+      })
+      .catch(err => console.log("Error fetching pages", err));
+  };
+
   render() {
+    const numberOfPages = Math.floor(this.state.totalResults / 500);
+    console.log("number of Pages", numberOfPages);
     return (
       <div id="wrapper">
         <Navbar
@@ -73,6 +95,13 @@ class App extends Component {
           movieList={this.state.movies}
           totalCount={this.state.totalResults}
         />
+        {this.state.totalResults > 20 ? (
+          <Pagination
+            pages={numberOfPages}
+            nextPage={this.handleNextPage}
+            currentPage={this.state.currentPage}
+          />
+        ) : null}
       </div>
     );
   }
